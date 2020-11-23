@@ -37,19 +37,6 @@
       "_note": "",
       "_profilePic": "../assets/profile-images/Ellipse -1.png",
       "id": 3
-    },
-    {
-      "_name": "Pranav Patel",
-      "_profilePic": "../assets/profile-images/Ellipse -2.png",
-      "_gender": "Male",
-      "_department": [
-        "Sales",
-        "Finance"
-      ],
-      "_salary": "500000",
-      "_note": "Started on 16th November!",
-      "_startDate": "2020-11-15T18:30:00.000Z",
-      "id": 4
     }
   ]
 }
