@@ -1,13 +1,32 @@
 let employeePayrollList;
 window.addEventListener('DOMContentLoaded', (event) => {
-  employeePayrollList = getEmployeePayrollListFromStorage();
-  document.querySelector(".emp-count").textContent = employeePayrollList.length;
-  createInnerHTML();
-  localStorage.removeItem('editEmp'); 
+  if (site_properties.use_local_storage.match("true")) {
+    getEmployeePayrollListFromStorage();
+  } else getEmployeePayrollListFromServer();
 });
 
 const getEmployeePayrollListFromStorage = () => {
-  return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
+  employeePayrollList =  localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
+  processEmployeePayrollDataResponse();
+}
+
+const processEmployeePayrollDataResponse = () => {
+  document.querySelector(".emp-count").textContent = employeePayrollList.length;
+  createInnerHTML();
+  localStorage.removeItem('editEmp'); 
+}
+
+const getEmployeePayrollListFromServer = () => {
+  makeServiceCall("GET", site_properties.server_url, true)
+    .then (responseText => {
+      employeePayrollList = JSON.parse(responseText);
+      processEmployeePayrollDataResponse();
+    })
+    .catch(error => {
+      console.log("GET Error Status: " + JSON.stringify(error));
+      employeePayrollList = [];
+      processEmployeePayrollDataResponse();
+    });
 }
 
 const createInnerHTML = () => {
