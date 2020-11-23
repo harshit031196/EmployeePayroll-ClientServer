@@ -75,16 +75,20 @@ const save = (event) => {
       resetForm();
       window.location.replace(site_properties.home_page);
     } else {
-      createEmployeePayroll();
+      createOrUpdateEmployeePayroll();
     }
   } catch (error) {
     alert(error);
   }
 }
 
-const createEmployeePayroll = () => {
+const createOrUpdateEmployeePayroll = () => {
   let postURL = site_properties.server_url;
   let methodCall = "POST";
+  if (isUpdate) {
+    methodCall = "PUT";
+    postURL = postURL + employeePayrollObject.id.toString();
+  }
   makeServiceCall(methodCall, postURL, true, employeePayrollObject)
     .then(responseText => {
       resetForm();

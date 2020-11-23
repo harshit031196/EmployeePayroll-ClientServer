@@ -5,11 +5,12 @@
       "_name": "Mark",
       "_gender": "Male",
       "_department": [
-        "Engineer",
-        "Finance"
+        "Sales",
+        "Finance",
+        "Engineer"
       ],
       "_salary": "500000",
-      "_startDate": "29 Oct 2019",
+      "_startDate": "2019-10-28T18:30:00.000Z",
       "_note": "All In One",
       "_profilePic": "../assets/profile-images/Ellipse -3.png"
     },
@@ -21,9 +22,9 @@
         "Engineer"
       ],
       "_salary": "500000",
-      "_startDate": "29 Oct 2019",
+      "_startDate": "2019-10-28T18:30:00.000Z",
       "_note": "Terrific Engineer",
-      "_profilePic": "../assets/profile-images/Ellipse -1.png"
+      "_profilePic": "../assets/profile-images/Ellipse -5.png"
     },
     {
       "_name": "Amarpa Shashanka Keerthi Kumar",
@@ -38,7 +39,7 @@
       "id": 3
     },
     {
-      "_name": "Pranav",
+      "_name": "Pranav Patel",
       "_profilePic": "../assets/profile-images/Ellipse -2.png",
       "_gender": "Male",
       "_department": [
