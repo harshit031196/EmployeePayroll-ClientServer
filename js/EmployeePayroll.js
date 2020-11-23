@@ -1,4 +1,5 @@
 class EmployeePayroll {
+  id;
 
   get name() {
     return this._name;
@@ -9,17 +10,6 @@ class EmployeePayroll {
       this._name = name;
     }
     else throw "Incorrect Name! Must Start With A Capital Letter!";
-  }
-
-  get id() {
-    return this._id;
-  }
-  set id(id) {
-    let idRegex = RegExp('^[1-9]{1}[0,9]{0,}$');
-    if (idRegex.test(id)) {
-      this._id = id;
-    }
-    else throw "Incorrect Id!";
   }
 
   get profilePic() {
